@@ -3,22 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const carritoOverlay = document.getElementById('carritoOverlay');
     const cerrarCarrito = document.getElementById('cerrarCarrito');
     const botonesAgregar = document.querySelectorAll('.product-btn');
-    
-    
-    botonesAgregar.forEach(boton => {
-        boton.addEventListener('click', agregarCarrito);
-    });
 
-    cerrarCarrito.addEventListener('click', () => {
-        carritoOffCanvas.classList.remove('show');
-        carritoOverlay.style.display = 'none';
-    });
+    // Recuperar el carrito de localStorage
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-    carritoOverlay.addEventListener('click', () => {
-        carritoOffCanvas.classList.remove('show');
-        carritoOverlay.style.display = 'none';
-    });
-   
+    // Lista de socios
     let listaSocios = JSON.parse(localStorage.getItem('usuariosRegistrados')) || [
         {nombre: "matias", apellido: "ponce", contraseña:"argentina"},
         {nombre: "nicolas", apellido: "ponce", contraseña:"peru"},
@@ -27,121 +16,43 @@ document.addEventListener('DOMContentLoaded', function() {
         {nombre: "madeleine", apellido: "velazques", contraseña:"brasil"}
     ];
 
-    let carrito = [];
-    let socio = false;
+    function actualizarCarrito() {
+        const tbody = document.getElementById('tbody');
+        tbody.innerHTML = '';
+        carrito.forEach((producto, index) => {
+            const fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td><img width="50px" src="${producto.img}" alt="${producto.nombre}"></td>
+                <td class="productName"><p>${producto.nombre}</p></td>
+                <td>
+                    <button class="btnQuitarUnidad" data-index="${index}">-</button>
+                    <p class="third-row">${producto.cantidad}</p>
+                    <button class="btnAgregarUnidad" data-index="${index}">+</button>
+                </td>
+                <td class="priceCart">${producto.precio}</td>
+                <td><button data-index="${index}" class="btnBorrar">X</button></td>
+            `;
+            tbody.appendChild(fila);
+        });
 
-    function verificarSocio() {
-        let nombreUsuario = localStorage.getItem('nombreUsuario');
-        let contraseña = localStorage.getItem('contraseña');
-        
-        if (nombreUsuario && contraseña) {
-            let nombreArray = nombreUsuario.toLowerCase().split(' ');
-            let socioEncontrado = listaSocios.find(socio =>
-                socio.nombre === nombreArray[0] &&
-                socio.apellido === nombreArray[1] &&
-                socio.contraseña === contraseña
-            );
-            return socioEncontrado ? true : false;
-        }
-        return false;
+        mostrarTotal();
+
+        // Guardar el carrito actualizado en localStorage
+        localStorage.setItem('carrito', JSON.stringify(carrito));
     }
 
-    socio = verificarSocio();
-
-    function agregarCarrito(e){
-        let hijo = e.target;
-        let padre = hijo.parentNode;
-        let abuelo = padre.parentNode;
-        
-        let nombreProducto = padre.querySelector("h3").textContent;
-        let precioProducto = parseFloat(padre.querySelector("h5").textContent.replace('$', ''));    
-        let imgProducto = abuelo.querySelector("img").src;
-
-        let producto = {
-            nombre: nombreProducto, 
-            precio: precioProducto, 
-            cantidad:1, 
-            img:imgProducto
-        };
-
-        let productoExistente = carrito.find(item => item.nombre === producto.nombre);
-
-        if (productoExistente){
-            productoExistente.cantidad++;
+    function agregarAlCarrito(producto) {
+        const index = carrito.findIndex(item => item.nombre === producto.nombre);
+        if (index > -1) {
+            carrito[index].cantidad += 1;
         } else {
             carrito.push(producto);
-        }    
-        
-        mostrarCarrito();
+        }
+        actualizarCarrito();
 
         // Mostrar el carrito y el overlay
         carritoOffCanvas.classList.add('show');
         carritoOverlay.style.display = 'block';
-    }
-
-    function mostrarCarrito(){
-        let tabla = document.getElementById("tbody");
-        tabla.innerHTML = "";
-
-        for(let producto of carrito){
-            let fila = document.createElement("tr");
-            fila.innerHTML = `
-                <td><img width="50px" src="${producto.img}"></td>
-                <td class="productName"><p>${producto.nombre}</p></td>
-                <td><button class="btnQuitarUnidad">-</button><p class="third-row">${producto.cantidad}</p><button class="btnAgregarUnidad">+</button></td>
-                <td class="priceCart">${producto.precio}</td>
-                <td><button class="btnBorrar">X</button></td>
-            `;
-            tabla.append(fila);
-        }
-
-        let btnEliminar = document.querySelectorAll(".btnBorrar");
-        btnEliminar.forEach(boton => boton.addEventListener("click", borrarProducto));
-
-        let btnQuitarUnidad = document.querySelectorAll(".btnQuitarUnidad");
-        btnQuitarUnidad.forEach(boton => boton.addEventListener("click", quitarUnidad));
-
-        let btnAgregarUnidad = document.querySelectorAll(".btnAgregarUnidad");
-        btnAgregarUnidad.forEach(boton => boton.addEventListener("click", agregarUnidad));
-
-        mostrarTotal();
-    }
-
-    function borrarProducto(e) {
-        let abuelo = e.target.parentNode.parentNode;
-        let productoEliminar = abuelo.querySelector("p").textContent;
-        carrito = carrito.filter(producto => producto.nombre !== productoEliminar);
-
-        mostrarCarrito();
-    }
-
-    function quitarUnidad(e) {
-        let abuelo = e.target.closest('tr'); // Encuentra el abuelo más cercano, que es la fila de la tabla
-        let productoNombre = abuelo.querySelector("p").textContent;
-        
-        let producto = carrito.find(item => item.nombre === productoNombre);
-
-        if (producto) {
-            producto.cantidad--;
-            if (producto.cantidad === 0) {
-                carrito = carrito.filter(item => item.nombre !== productoNombre);
-            }
-        }
-
-        mostrarCarrito();
-    }
-
-    function agregarUnidad(e) {
-        let abuelo = e.target.closest('tr'); // Encuentra el abuelo más cercano, que es la fila de la tabla
-        let productoNombre = abuelo.querySelector("p").textContent;
-        
-        let producto = carrito.find(item => item.nombre === productoNombre);
-
-        if (producto) {
-            producto.cantidad++;
-        }
-
-        mostrarCarrito();
     }
 
     function mostrarTotal() {
@@ -168,11 +79,94 @@ document.addEventListener('DOMContentLoaded', function() {
                                                       </div>`;
     }
 
+    function agregarUnidad(e) {
+        const index = e.target.getAttribute('data-index');
+        carrito[index].cantidad += 1;
+        actualizarCarrito();
+    }
+
+    function quitarUnidad(e) {
+        const index = e.target.getAttribute('data-index');
+        if (carrito[index].cantidad > 1) {
+            carrito[index].cantidad -= 1;
+        } else {
+            carrito.splice(index, 1);
+        }
+        actualizarCarrito();
+    }
+
+    function borrarProducto(e) {
+        const index = e.target.getAttribute('data-index');
+        carrito.splice(index, 1);
+        actualizarCarrito();
+    }
+
+    function verificarSocio() {
+        let nombreUsuario = localStorage.getItem('nombreUsuario');
+        let contraseña = localStorage.getItem('contraseña');
+        
+        if (nombreUsuario && contraseña) {
+            let nombreArray = nombreUsuario.toLowerCase().split(' ');
+            let socioEncontrado = listaSocios.find(socio =>
+                socio.nombre === nombreArray[0] &&
+                socio.apellido === nombreArray[1] &&
+                socio.contraseña === contraseña
+            );
+            return socioEncontrado ? true : false;
+        }
+        return false;
+    }
+
+    botonesAgregar.forEach(boton => {
+        boton.addEventListener('click', (e) => {
+            const producto = {
+                img: e.target.parentElement.previousElementSibling.src,
+                nombre: e.target.parentElement.children[1].innerText,
+                precio: parseFloat(e.target.parentElement.children[2].innerText.replace('$', '')),
+                cantidad: 1
+            };
+            agregarAlCarrito(producto);
+        });
+    });
+
+    cerrarCarrito.addEventListener('click', () => {
+        carritoOffCanvas.classList.remove('show');
+        carritoOverlay.style.display = 'none';
+    });
+
+    carritoOverlay.addEventListener('click', () => {
+        carritoOffCanvas.classList.remove('show');
+        carritoOverlay.style.display = 'none';
+    });
+
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('btnBorrar')) {
+            borrarProducto(e);
+        }
+        if (e.target.classList.contains('btnAgregarUnidad')) {
+            agregarUnidad(e);
+        }
+        if (e.target.classList.contains('btnQuitarUnidad')) {
+            quitarUnidad(e);
+        }
+    });
+
+    // Abrir carrito
+    const carritoBoton = document.querySelector('.cart-btn');
+    if (carritoBoton) {
+        carritoBoton.addEventListener('click', () => {
+            carritoOffCanvas.classList.add('show');
+            carritoOverlay.style.display = 'block';
+        });
+    }
+
+    // Inicializar el carrito
     window.onload = function() {
         let usuariosRegistrados = JSON.parse(localStorage.getItem('usuariosRegistrados')) || [];
         if (usuariosRegistrados.length > 0) {
             listaSocios = usuariosRegistrados;
         }
         socio = verificarSocio();
+        actualizarCarrito();
     }
 });
