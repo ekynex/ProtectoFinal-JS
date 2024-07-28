@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <title>Inicio/Registro</title>
+</head>
+<body>
+
+    <main class="iniReg-container">
+
+        <div class="iniciarContainer">
+            <h2 class="title">Iniciar sesión</h2>
+            <form action="#" class="iniciarForm" onsubmit="return validar()">
+                <input type="text" placeholder="Nombre" id="nombreUsuario" required>
+                <input type="password" placeholder="Contraseña" id="contraseña" required>
+                <input type="submit" class="enviarBtn" value="Iniciar">
+            </form>
+            <div class="ic-text">
+                <p>¿No tienes cuenta?</p>
+                <button class="iniReg-btn" id="insBtn">Registrate aquí</button>
+            </div>
+            <div id="msj"></div>
+        </div>
+
+        <div class="inscribeteContainer">
+            <h2 class="title">Inscribirse</h2>
+            <form action="" class="inscribeteForm" id="registroForm">
+                <input type="text" placeholder="Nombre" id="nombreRegistro" required>   
+                <input type="text" placeholder="Apellido" id="apellidoRegistro" required>                 
+                <input type="password" placeholder="Contraseña" id="contraseñaNueva" required>
+                <input type="submit" class="enviarBtn" value="Registrarse" id="alert-register">
+            </form>
+            <div class="ic-text">
+                <p>¿Ya tienes una cuenta?</p>
+                <button class="iniReg-btn" id="iniBtn">Inicia sesión aquí</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="../js/iniReg.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
