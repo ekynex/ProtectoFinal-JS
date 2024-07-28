@@ -29,21 +29,21 @@
     
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item">Inicio</a>
+                    <a href="../index.html" class="navbar-item">Inicio</a>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">Categorias</a>
     
                         <div class="navbar-dropdown">
-                            <a href="./zapatillas.html" class="navbar-item">Zapatillas</a>
-                            <a href="./ropa.html" class="navbar-item is-selected">Ropa</a>
-                            <a href="./accesorios.html" class="navbar-item">Accesorios</a>
+                            <a href="../pages/zapatillas.html" class="navbar-item">Zapatillas</a>
+                            <a href="../pages/ropa.html" class="navbar-item is-selected">Ropa</a>
+                            <a href="../pages/accesorios.html" class="navbar-item">Accesorios</a>
                         </div>
                     </div>
                 </div>
     
                 <div class="navbar-end">
                     <div class="navbar-item">
-                        <button id="loginBtn" class="button is-primary"><a href="./pages/inicioyregistro.html">Iniciar sesión</a></button>
+                        <button id="loginBtn" class="button is-primary"><a href="../pages/inicioyregistro.html">Iniciar sesión</a></button>
                         <div id="welcomeMsg" style="display:none;">
                             Bienvenido, <span id="userName"></span>
                         </div>
@@ -60,59 +60,60 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae maiores, harum repellendus quam quisquam totam tenetur illo ut similique nostrum!</p>
         </section>
         <section class="ac-grid">
-            <div class="acg-1">
+            <div class="acg-1 contenedor-productos">
                 <img src="../img/accesorios1.webp" alt="">
                 <div class="pg-txt">
                     <p>Accesorios</p>
                     <h3>Mochila Nike</h3>
                     <h5>$115.23</h5>
-                    <button class="product-btn">Agregar al carrito</button>
+                    <button class="product-btn" data-id="19">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="acg-2">
+            <div class="acg-2 contenedor-productos">
                 <img src="../img/accesorios2.webp" alt="">
                 <div class="pg-txt">
                     <p>Accesorios</p>
                     <h3>Mochila Jordan</h3>
                     <h5>$165.73</h5>
-                    <button class="product-btn">Agregar al carrito</button>
+                    <button class="product-btn" data-id="20">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="acg-3">
+            <div class="acg-3 contenedor-productos">
                 <img src="../img/accesorios3.webp" alt="">
                 <div class="pg-txt">
                     <p>Accesorios</p>
                     <h3>Gorra Jordan Roja</h3>
                     <h5>$116.23</h5>
-                    <button class="product-btn">Agregar al carrito</button>
+                    <button class="product-btn" data-id="21">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="acg-4">
+            <div class="acg-4 contenedor-productos">
                 <img src="../img/accesorios4.webp" alt="">
                 <div class="pg-txt">
                     <p>Accesorios</p>
                     <h3>Gorra Jordan Bordó</h3>
                     <h5>$167.63</h5>
-                    <button class="product-btn">Agregar al carrito</button>
+                    <button class="product-btn" data-id="22">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="acg-5">
+            <div class="acg-5 contenedor-productos">
                 <img src="../img/accesorios5.webp" alt="">
                 <div class="pg-txt">
                     <p>Accesorios</p>
                     <h3>Rodillera</h3>
                     <h5>$105.93</h5>
-                    <button class="product-btn">Agregar al carrito</button>
+                    <button class="product-btn" data-id="23">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="acg-6">
+            <div class="acg-6 contenedor-productos">
                 <img src="../img/accesorios6.webp" alt="">
                 <div class="pg-txt">
                     <p>Accesorios</p>
                     <h3>Guantes</h3>
                     <h5>$160.23</h5>
-                    <button class="product-btn">Agregar al carrito</button>
+                    <button class="product-btn" data-id="24">Agregar al carrito</button>
                 </div>
+            </div>
         </section>
 
         <div id="carritoOverlay" class="overlay"></div>
@@ -179,6 +180,6 @@
     </footer>
     
     <script src="../js/carrito.js"></script>   
-    <!-- <script src="../js/otro.js"></script> --> 
+    
 </body>
 </html>

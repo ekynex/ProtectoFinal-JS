@@ -30,21 +30,21 @@
     
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item">Inicio</a>
+                    <a href="../index.html" class="navbar-item">Inicio</a>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">Categorias</a>
     
                         <div class="navbar-dropdown">
-                            <a href="./zapatillas.html" class="navbar-item">Zapatillas</a>
-                            <a href="./ropa.html" class="navbar-item is-selected">Ropa</a>
-                            <a href="./accesorios.html" class="navbar-item">Accesorios</a>
+                            <a href="../pages/zapatillas.html" class="navbar-item">Zapatillas</a>
+                            <a href="../pages/ropa.html" class="navbar-item is-selected">Ropa</a>
+                            <a href="../pages/accesorios.html" class="navbar-item">Accesorios</a>
                         </div>
                     </div>
                 </div>
     
                 <div class="navbar-end">
                     <div class="navbar-item">
-                        <button id="loginBtn" class="button is-primary"><a href="./pages/inicioyregistro.html">Iniciar sesión</a></button>
+                        <button id="loginBtn" class="button is-primary"><a href="../pages/inicioyregistro.html">Iniciar sesión</a></button>
                         <div id="welcomeMsg" style="display:none;">
                             Bienvenido, <span id="userName"></span>
                         </div>
@@ -62,59 +62,60 @@
         </section>
 
         <section class="rc-grid">
-            <div class="rcg-1">
+            <div class="rcg-1 contenedor-productos">
                 <img src="../img/ropa1.avif" alt="">
                 <div class="pg-txt">
                     <p>Ropa</p>
                     <h3>Buzo Adidas Rosa</h3>
                     <h5>$145.93</h5>
-                    <button class="product-btn">Agregar al carrito</button>
+                    <button class="product-btn" data-id="13">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="rcg-2">
+            <div class="rcg-2 contenedor-productos">
                 <img src="../img/ropa2.avif" alt="">
                 <div class="pg-txt">
                     <p>Ropa</p>
                     <h3>Hoddie</h3>
                     <h5>$105.20</h5>
-                    <button class="product-btn">Agregar al carrito</button>
+                    <button class="product-btn" data-id="14">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="rcg-3">
+            <div class="rcg-3 contenedor-productos">
                 <img src="../img/ropa3.avif" alt="">
                 <div class="pg-txt">
                     <p>Ropa</p>
                     <h3>Buzo Adidas Negro</h3>
                     <h5>$180.43</h5>
-                    <button class="product-btn">Agregar al carrito</button>
+                    <button class="product-btn" data-id="15">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="rcg-4">
+            <div class="rcg-4 contenedor-productos">
                 <img src="../img/ropa4.avif" alt="">
                 <div class="pg-txt">
                     <p>Ropa</p>
-                    <h3>Nike Darbreak</h3>
+                    <h3>Buzo Adidas Gris</h3>
                     <h5>$125.13</h5>
-                    <button class="product-btn">Agregar al carrito</button>
+                    <button class="product-btn" data-id="16">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="rcg-5">
+            <div class="rcg-5 contenedor-productos">
                 <img src="../img/ropa5.avif" alt="">
                 <div class="pg-txt">
                     <p>Ropa</p>
-                    <h3>Nike Darbreak</h3>
+                    <h3>Buzo Adidas Gris FPF</h3>
                     <h5>$135.33</h5>
-                    <button class="product-btn">Agregar al carrito</button>
+                    <button class="product-btn" data-id="17">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="rcg-6">
+            <div class="rcg-6 contenedor-productos">
                 <img src="../img/ropa6.avif" alt="">
                 <div class="pg-txt">
                     <p>Ropa</p>
-                    <h3>Nike Darbreak</h3>
+                    <h3>Polera Adidas Celeste</h3>
                     <h5>$175.83</h5>
-                    <button class="product-btn">Agregar al carrito</button>
+                    <button class="product-btn" data-id="18">Agregar al carrito</button>
                 </div>
+            </div>
         </section>
 
         <div id="carritoOverlay" class="overlay"></div>
@@ -180,6 +181,6 @@
     </footer>
     
     <script src="../js/carrito.js"></script>    
-    <!-- <script src="../js/otro.js"></script> -->
+    
 </body>
 </html>
