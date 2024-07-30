@@ -1,0 +1,170 @@
+[
+    {
+        "id":"1",
+        "nombre":"Nike Darbreak",
+        "precio":145.93,
+        "img":"../img/nike1.jpg",
+        "cantidad":1
+    },
+    {
+        "id":"2",
+        "nombre":"Nike React Metcon AMP",
+        "precio":180.22,
+        "img":"../img/nike2.jpg",
+        "cantidad":1
+    },
+    {
+        "id":"3",
+        "nombre":"Nike MX-720-818",
+        "precio":120.58,
+        "img":"../img/nike3.jpg",
+        "cantidad":1
+    },
+    {
+        "id":"4",
+        "nombre":"Nike Shox TL Nova SP",
+        "precio":145.00,
+        "img":"../img/nike4.jpg",
+        "cantidad":1
+    },
+    {
+        "id":"5",
+        "nombre":"Nike Free RN Flyknit 3.0",
+        "precio":107.18,
+        "img":"../img/nike5.jpg",
+        "cantidad":1
+    },
+    {
+        "id":"6",
+        "nombre":"Kyrie 6 By You",
+        "precio":190.85,
+        "img":"../img/nike6.jpg",
+        "cantidad":1
+    },
+    {
+        "id":"7",
+        "nombre":"Jordan 'Why Not?' Zer0.3 PF",
+        "precio":191.23,
+        "img":"../img/nike7.jpg",
+        "cantidad":1
+    },
+    {
+        "id":"8",
+        "nombre":"Nike Air Force 1 '07 LV8",
+        "precio":180.22,
+        "img":"../img/nike8.jpg",
+        "cantidad":1
+    },
+    {
+        "id":"9",
+        "nombre":"Air Jordan 1 Mid SE",
+        "precio":100.16,
+        "img":"../img/nike9.jpg",
+        "cantidad":1
+    },
+    {
+        "id":"10",
+        "nombre":"Kyrie 6 EP 'Chinese New Year'",
+        "precio":167.72,
+        "img":"../img/nike10.jpg",
+        "cantidad":1
+    },
+    {
+        "id":"11",
+        "nombre":"Nike Air Max 97",
+        "precio":121.47,
+        "img":"../img/nike11.jpg",
+        "cantidad":1
+    },
+    {
+        "id":"12",
+        "nombre":"Nike Air Max Dn",
+        "precio":165.27,
+        "img":"../img/nike12.jpg",
+        "cantidad":1
+    },
+    {
+        "id":"13",
+        "nombre":"Buzo Adidas Rosa",
+        "precio":"145.93",
+        "img":"../img/ropa1.avif",
+        "cantidad":1
+    },
+    {
+        "id":"14",
+        "nombre":"Hoddie",
+        "precio":105.20,
+        "img":"../img/ropa2.avif",
+        "cantidad":1
+    },
+    {
+        "id":"15",
+        "nombre":"Buzo Adidas Negro",
+        "precio":180.43,
+        "img":"../img/ropa3.avif",
+        "cantidad":1
+    },
+    {
+        "id":"16",
+        "nombre":"Buzo Adidas Gris",
+        "precio":125.13,
+        "img":"../img/ropa4.avif",
+        "cantidad":1
+    },
+    {
+        "id":"17",
+        "nombre":"Buzo Adidas Gris FPF",
+        "precio":135.33,
+        "img":"../img/ropa5.avif",
+        "cantidad":1
+    },
+    {
+        "id":"18",
+        "nombre":"Polera Adidas Celeste",
+        "precio":175.83,
+        "img":"../img/ropa6.avif",
+        "cantidad":1
+    },
+    {
+        "id":"19",
+        "nombre":"Mochila Nike",
+        "precio":115.23,
+        "img":"../img/accesorios1.webp",
+        "cantidad":1
+    },
+    {
+        "id":"20",
+        "nombre":"Mochila Jordan",
+        "precio":165.73,
+        "img":"../img/accesorios2.webp",
+        "cantidad":1
+    },
+    {
+        "id":"21",
+        "nombre":"Gorra Jordan Roja",
+        "precio":116.23,
+        "img":"../img/accesorios3.webp",
+        "cantidad":1
+    },
+    {
+        "id":"22",
+        "nombre":"Gorra Jordan Bordó",
+        "precio":167.63,
+        "img":"../img/accesorios4.webp",
+        "cantidad":1
+    },
+    {
+        "id":"23",
+        "nombre":"Rodillera",
+        "precio":105.93,
+        "img":"../img/accesorios5.webp",
+        "cantidad":1
+    },
+    {
+        "id":"24",
+        "nombre":"Guantes",
+        "precio":160.23,
+        "img":"../img/accesorios6.webp",
+        "cantidad":1
+    }
+]

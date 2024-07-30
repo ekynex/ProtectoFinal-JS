@@ -2,9 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const carritoOffCanvas = document.getElementById('carritoOffCanvas');
     const carritoOverlay = document.getElementById('carritoOverlay');
     const cerrarCarrito = document.getElementById('cerrarCarrito');
-    const botonesAgregar = document.querySelectorAll('.product-btn');
-
-    // Recuperar el carrito de localStorage
+    let productos = []; 
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
     // Lista de socios
@@ -16,13 +14,35 @@ document.addEventListener('DOMContentLoaded', function() {
         {nombre: "madeleine", apellido: "velazques", contraseña:"brasil"}
     ];
 
+    // Cargar los productos del archivo JSON
+    fetch('../js/productos.json')
+        .then(response => response.json())
+        .then(data => {
+            productos = data;
+            inicializarBotonesAgregar();
+        })
+        .catch(error => console.error('Error al cargar el JSON:', error));
+
+    function inicializarBotonesAgregar() {
+        const botonesAgregar = document.querySelectorAll('.product-btn');
+        botonesAgregar.forEach(boton => {
+            boton.addEventListener('click', (e) => {
+                const idProducto = e.target.getAttribute('data-id');
+                const producto = productos.find(p => p.id === idProducto);
+                if (producto) {
+                    agregarAlCarrito(producto);
+                }
+            });
+        });
+    }
+
     function actualizarCarrito() {
         const tbody = document.getElementById('tbody');
         tbody.innerHTML = '';
         carrito.forEach((producto, index) => {
             const fila = document.createElement('tr');
             fila.innerHTML = `
-                <td><img width="50px" src="${producto.img}" alt="${producto.nombre}"></td>
+                <td><img width="50px" src="${producto.img || ''}" alt="${producto.nombre}"></td>
                 <td class="productName"><p>${producto.nombre}</p></td>
                 <td>
                     <button class="btnQuitarUnidad" data-index="${index}">-</button>
@@ -37,20 +57,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         mostrarTotal();
 
-        // Guardar el carrito actualizado en localStorage
         localStorage.setItem('carrito', JSON.stringify(carrito));
     }
 
     function agregarAlCarrito(producto) {
-        const index = carrito.findIndex(item => item.nombre === producto.nombre);
+        const index = carrito.findIndex(item => item.id === producto.id);
         if (index > -1) {
             carrito[index].cantidad += 1;
         } else {
-            carrito.push(producto);
+            carrito.push({...producto, cantidad: 1});
         }
         actualizarCarrito();
 
-        // Mostrar el carrito y el overlay
         carritoOffCanvas.classList.add('show');
         carritoOverlay.style.display = 'block';
     }
@@ -117,18 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return false;
     }
 
-    botonesAgregar.forEach(boton => {
-        boton.addEventListener('click', (e) => {
-            const producto = {
-                img: e.target.parentElement.previousElementSibling.src,
-                nombre: e.target.parentElement.children[1].innerText,
-                precio: parseFloat(e.target.parentElement.children[2].innerText.replace('$', '')),
-                cantidad: 1
-            };
-            agregarAlCarrito(producto);
-        });
-    });
-
     cerrarCarrito.addEventListener('click', () => {
         carritoOffCanvas.classList.remove('show');
         carritoOverlay.style.display = 'none';
@@ -151,7 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Abrir carrito
     const carritoBoton = document.querySelector('.cart-btn');
     if (carritoBoton) {
         carritoBoton.addEventListener('click', () => {
@@ -160,7 +165,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Inicializar el carrito
     window.onload = function() {
         let usuariosRegistrados = JSON.parse(localStorage.getItem('usuariosRegistrados')) || [];
         if (usuariosRegistrados.length > 0) {
@@ -170,5 +174,3 @@ document.addEventListener('DOMContentLoaded', function() {
         actualizarCarrito();
     }
 });
-
-
