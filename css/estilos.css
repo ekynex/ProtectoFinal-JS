@@ -64,8 +64,7 @@ body {
 .carousel-item.center-position {
     background-position: center;
     background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right;
+    background-repeat: no-repeat;    
   }
   
 .carousel-item.active {
@@ -126,10 +125,6 @@ body {
     font-weight: bold;    
     text-transform: uppercase;   
 }
-
-/* .carousel-content button:hover{
-    background-color: rgb(199, 0, 0);    
-} */
   
 .carousel-item.active .carousel-content {
     opacity: 1;
@@ -213,14 +208,14 @@ body {
     padding-bottom: 25px;
 }
 
-.first-offer button{
+.first-offer .fo-btn{
     border: 1px solid white;
     border-radius: 5px;
     background-color: white;
     padding: 5px 15px;
 }
 
-.first-offer button a{
+.first-offer .fo-btn a{
     color: black;
     font-size: .8rem;
     font-weight: 700;
@@ -354,6 +349,7 @@ body {
     font-weight: 800;
     color: black;
     padding: 15px 0;
+    font-size: .9rem;
 }
 
 .pg-txt h5{
@@ -361,6 +357,7 @@ body {
     font-weight: 800;
     color: red;
     padding-bottom: 15px;
+
 }
 
 .pg-txt .product-btn{
@@ -989,13 +986,7 @@ body {
     grid-area: 3 / 4 / 4 / 5;
 }
 
-.pg-txt h3{
-    font-size: .9rem;
-}
 
-.pg-txt h5{
-    font-size: .9rem;
-}
 
 /* CARRITO */
 
@@ -1455,4 +1446,1283 @@ body {
     justify-content: center; */
     width: 100vw;
     color: white;
+}
+
+
+
+
+
+
+/* !important */
+
+
+
+/* RESPONSIVE */
+
+@media (max-width: 400px){  
+
+    /* HEADER */  
+    .navbar-brand{
+        margin: 0;
+        padding: 0 20px;
+        width: 100%;
+    }
+
+    /* CARRUSEL */
+    .carousel-item.active{
+        padding-left: 30px;
+        background-size: contain;
+        background-position: top;         
+    }
+    .carousel-item.active > .carousel-content{
+        position: absolute;
+        top: 40px;        
+    }
+    .carousel-item.center-position{
+        background-position: bottom;
+        background-size: contain;
+        background-repeat: no-repeat;        
+    }
+    .carousel-content{
+        width: 90%;
+    }
+    .carousel-content h3{
+        font-size: 2.5rem;
+        line-height: 35px;
+        padding: 5px 0;
+    }
+    .carousel-content p:nth-child(1){
+        font-size: 1rem;
+    }
+    .carousel-content p:nth-child(3){
+        font-size: 1.7rem;
+    }
+    .carousel-content button{
+        width: 50%; 
+    }
+    .carousel-content button a{
+        font-size: .6rem;
+    }
+
+    /* TWO OFFER */
+    .two-offer{
+        bottom: 50px;
+        padding: 0;
+        margin-bottom: -40px;
+    }
+    .first-offer{
+        padding-left: 20px;
+        height: 300px;
+        background-position: right;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 50%;
+    }
+    .first-offer p{
+        font-size: .8rem;        
+    }
+    .first-offer h2{
+        width: 80%;
+        font-size: 1.8rem;
+        line-height: 25px;  
+        text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;      
+    }
+    .first-offer span{
+        font-size: .75rem;
+        line-height: 15px;        
+        text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    }
+    .second-offer{
+        padding-left: 20px;
+        height: 300px;
+        background-position: right;
+        background-size: cover;
+        background-repeat: no-repeat;        
+    }
+    .second-offer p{
+        font-size: .8rem;        
+    }
+    .second-offer h2{
+        width: 100%;
+        font-size: 1.8rem;
+        line-height: 25px;
+        text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    }  
+
+    /* PRODUCTS */
+    .products{
+        margin-bottom: -60px;
+    }
+    .products-grid-1 h2{
+        font-size: 1.8rem;
+        width: 50%;
+        flex-wrap: wrap;
+        text-align: center;
+        padding-bottom: 5px;
+    }
+    .pg-txt p{
+        font-size: 1rem;
+        padding: 5px 0;
+    }
+    .pg-txt h3{
+        font-size: .8rem;
+        padding: 5px 6px;
+        text-align: center;
+    }
+    .pg-txt h5{
+        font-size: .7rem;
+    }
+    .pg-txt .product-btn{
+        font-size: .6rem;
+        font-weight: 700;
+        line-height: 12px;
+        padding: 3px 4px;
+        margin: 0 6px 10px 6px;
+    }
+
+    /* GRID OFFER */
+    .grid-offer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 3fr 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        height: 1000px;
+        margin-bottom: -60px;
+    }
+    .go-1{
+        grid-area: 1 / 1 / 2 / 3;
+    }
+    .go-1 h2{
+        font-size: 1.7rem;
+        padding: 20px 0;
+    }
+    .go-1 h3{
+        font-size: 1.1rem;
+    }
+    .go-2{
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    .go2-cont{
+        width: 80%;
+    }
+    .go2-cont p{
+        font-size: .9rem;
+    }
+    .go2-cont h3{
+        font-size: 1.7rem;
+        line-height: 22px;
+        padding: 15px 0 5px 0;
+    }
+    .go2-prices{
+        font-size: 1.4rem;
+    }
+    .go2-btn{
+        font-size: 1rem;
+    }
+    .go-3{
+        grid-area: 2 / 2 / 3 / 3;
+    }
+    .go3-cont{
+        width: 80%;
+    }
+    .go3-cont p{
+        font-size: .9rem;
+    }
+    .go3-cont h3{
+        font-size: 1.7rem;
+        line-height: 22px;
+        width: 80%;
+        padding: 15px 0 5px 0;
+    }
+    .go3-prices{
+        font-size: 1.4rem;
+    }
+    .go3-btn{
+        font-size: 1rem;
+    }
+
+    /* GALLERY */
+    .last-img img{
+        width: 30%;
+        top: 10px;
+        left: 5px;
+    }
+    .last-img p{
+        bottom: 2px;
+        left: 5px;
+        font-size: .6rem;
+        line-height: 10px;
+    }
+
+    /* MEDALS */
+    .medals{        
+        flex-wrap: wrap;    
+        padding-top: 20px;    
+    }
+    .medal-1{
+        flex-direction: column;
+        width: 30%;
+    }
+    .medal-1-txt{
+        padding: 0;
+    }
+    .medal-1-txt h3{
+        font-size: .7rem;
+        text-align: center;
+        padding: 0 30px;
+    }
+    .medal-1-txt p{
+        font-size: .8rem;
+        text-align: center;        
+    }
+    .medal-2{
+        flex-direction: column;
+        width: 30%;
+    }
+    .medal-2-txt{
+        padding: 0;
+    }
+    .medal-2-txt h3{
+        font-size: .7rem;
+        text-align: center;
+        padding: 0 10px;   
+    }
+    .medal-2-txt p{
+        font-size: .8rem;
+        text-align: center;
+    }
+    .medal-3{
+        flex-direction: column;
+        width: 30%;
+    }
+    .medal-3-txt{
+        padding: 0;
+    }
+    .medal-3-txt h3{
+        font-size: .7rem;
+        text-align: center;
+    }
+    .medal-3-txt p{
+        font-size: .8rem;
+        text-align: center;
+    }
+
+    
+    /* FOOTER */
+    .fg-container{
+        display: grid;
+        grid-template-columns: 1.25fr 1fr 1.25fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        padding: 30px 0;
+        max-width: 100%;
+    }
+    .fgc-1{        
+        grid-area: 1 / 1 / 2 / 2;
+        padding-left: 10px;
+        min-width: 0;
+    }
+    .fgc-1 h6{
+        font-size: .7rem;
+        padding-bottom: 10px;
+    }
+    .fgc-1 p{
+        font-size: 1rem;
+        line-height: 15px;       
+    }
+    .fgc-2{
+        grid-area: 1 / 2 / 2 / 3;
+        /* padding-right: 10px; */
+    }
+    .fgc-2 h6{
+        font-size: .7rem;
+        padding-bottom: 10px;
+    }
+    .fgc-2 p{
+        font-size: 1rem;
+        line-height: 15px;
+    }
+    .fgc-3{
+        grid-area: 1 / 3 / 2 / 4;
+    }
+    .fgc-3 h6{
+        font-size: .7rem;
+        padding-bottom: 10px
+    }
+    .fgc-3 p{
+        font-size: 1rem;
+        line-height: 20px;
+    }
+    .fgc-4{
+        grid-area: 2 / 1 / 3 / 3; 
+        min-width: 0;    
+        padding-left: 10px;
+    }
+    .fgc-4 h6{
+        font-size: .7rem;
+        padding-bottom: 10px
+    }
+    .fgc-4 p{
+        font-size: 1rem;
+        line-height: 15px;
+    }
+    .fgc4-scon{
+        padding: 0;
+    }
+    .fgc4-scon input{
+        font-size: .9rem;        
+    }
+    .fgc4sc-btn{
+        font-size: .9rem;
+        padding: 10px;
+        
+    }
+    .fgc-5{
+        grid-area: 3 / 1 / 4 / 3;
+        padding-left: 10px;  
+    }
+    .fgc-5 p{
+        font-size: .9rem;
+        width: 90%;
+    }
+    .fgc-6{        
+        grid-area: 2 / 3 / 3 / 4;
+        flex-wrap: wrap;
+    }
+    .fgc-6 img{
+        margin: 0 10px;
+        width: 30%;
+    }
+    .fgc-7{
+        grid-area: 3 / 3 / 4 / 4;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+    }    
+
+
+
+
+
+    /* ZAPATILLAS */
+    .zc-title{
+        width: 100%;        
+    }
+    .zc-title h2{
+        font-size: 2.5rem;
+        padding: 0 50px;
+        text-align: center;
+        line-height: 35px;
+    }
+    .zc-title p{
+        font-size: 1.2rem;
+        width: 80%;
+    }
+    .zc-grid{
+        padding: 0 10px 50px 10px;
+        gap: 10px;
+    }
+
+
+
+
+
+    /* ROPA */
+    .rc-title{
+        width: 100%;        
+    }
+    .rc-title h2{
+        font-size: 2.5rem;
+        padding: 0 50px;
+        text-align: center;
+        line-height: 35px;
+    }
+    .rc-title p{
+        font-size: 1.2rem;
+        width: 85%;
+        line-height: 15px;
+    }
+    .rc-grid{
+        padding: 0 10px 50px 10px;
+        gap: 10px;
+    }
+
+
+
+
+
+    /* ACCESORIOS */
+    .ac-title{
+        width: 100%;        
+    }
+    .ac-title h2{
+        font-size: 2.5rem;
+        padding: 0 50px;
+        text-align: center;
+        line-height: 35px;
+    }
+    .ac-title p{
+        font-size: 1.2rem;
+        width: 85%;
+        line-height: 15px;
+    }
+    .ac-grid{
+        padding: 0 10px 50px 10px;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px){
+    /* HEADER */
+    .navbar-brand{
+        margin: 0;
+        padding: 0 20px;
+        width: 100%;
+    }
+   
+    
+
+    /* CARRUSEL */
+    .carousel-content{
+        width: 100%;
+    }
+    .carousel-content h3{
+        font-size: 2.7rem;
+        line-height: 35px;
+        padding: 5px 120px 5px 0;
+    }
+    .carousel-content p:nth-child(1){
+        font-size: 1.1rem;
+    }
+    .carousel-content p:nth-child(3){
+        font-size: 1.9rem;
+    }
+    .carousel-content button{
+        width: 35%; 
+    }
+    .carousel-content button a{
+        font-size: .7rem;
+    }
+
+    /* TWO OFFER */
+    .two-offer{
+        bottom: 20px;
+        padding: 0;
+        margin-bottom: -30px;
+    }
+    .first-offer{
+        padding-left: 30px;
+        background-position: right;
+        background-repeat: no-repeat;  
+        width: 52%;
+    }
+    .first-offer p{
+        font-size: .9rem;        
+    }
+    .first-offer h2{
+        width: 100%;
+        font-size: 2.5rem;
+        line-height: 30px; 
+        text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000; 
+    }
+    .first-offer span{
+        font-size: .7rem;
+        text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    }
+    .first-offer .fo-btn{        
+        padding: 4px 20px;
+    }
+    .first-offer .fo-btn a{        
+        font-size: .75rem;
+    }
+    .second-offer{
+        padding-left: 30px;
+        background-position: right;
+        background-repeat: no-repeat;  
+        width: 44%;
+    }
+    .second-offer p{
+        font-size: .9rem;        
+    }
+    .second-offer h2{
+        width: 100%;
+        line-height: 30px; 
+        font-size: 2.5rem;
+        text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000; 
+    }
+    .second-offer .fo-btn{        
+        padding: 4px 20px;
+    }
+    .second-offer .fo-btn a{        
+        font-size: .75rem;
+    }
+    /* PRODUCTS */
+    .products{
+        margin-bottom: -60px;
+    }
+    .products-grid-1 h2{
+        font-size: 2rem;
+        padding: 10px 0;
+    }
+    .products-grid-1 p{
+        font-size: 1.3rem;
+        padding: 0;
+    }
+    .pg-txt p{
+        font-size: 1rem;
+        padding: 5px 0;
+    }
+    .pg-txt h3{
+        font-size: .8rem;
+        text-align: center;
+        padding: 5px 6px;
+    }
+    .pg-txt h5{
+        font-size: .75rem;
+        padding: 5px 0;
+    }
+    .pg-txt .product-btn{
+        font-size: .7rem;
+        font-weight: 700;
+        line-height: 12px;
+        padding: 8px 5px;
+        margin: 0 6px 10px 6px;
+    }
+
+    /* GRID OFFER */
+    .grid-offer{
+        margin-bottom: -60px;
+    }
+    .go-1 p{
+        font-size: 1.1rem;        
+    }
+    .go-1 h2{
+        font-size: 2.4rem;
+        line-height: 35px;
+        text-align: center;
+        padding: 20px 0;
+    }
+    .go-1 h3{
+        font-size: .9rem;
+    }
+    .go2-cont{
+        width: 70%;
+    }
+    .go2-cont p{
+        font-size: .9rem;
+    }
+    .go2-cont h3{
+        font-size: 1.7rem;
+        line-height: 22px;
+        padding: 15px 0 5px 0;
+    }
+    .go2-prices{
+        font-size: 1.4rem;
+    }
+    .go2-btn{
+        font-size: 1rem;
+    }
+    .go3-cont{
+        width: 80%;
+    }
+    .go3-cont p{
+        font-size: .9rem;
+    }
+    .go3-cont h3{
+        font-size: 1.7rem;
+        line-height: 22px;
+        width: 80%;
+        padding: 15px 0 5px 0;
+    }
+    .go3-prices{
+        font-size: 1.4rem;
+    }
+    .go3-btn{
+        font-size: 1rem;
+    }
+
+    /* GALLERY */
+    .last-img img{
+        width: 30%;
+        top: 10px;
+        left: 5px;
+    }
+    .last-img p{
+        bottom: 10px;
+        left: 5px;
+        font-size: .8rem;
+        line-height: 10px;
+    }
+
+    /* MEDALS */    
+    .medals{
+        padding: 10px;
+    }
+    .medal-1{
+        flex-direction: column;
+        
+    }
+    .medal-1 img{
+        width: 35%;         
+    }
+    .medal-1-txt{
+        padding: 5px 10px;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;        
+    }
+    .medal-1-txt h3{
+        font-size: .8rem;
+        line-height: 18px;
+        padding-bottom: 5px;
+        
+    }
+    .medal-1-txt p{
+        font-size: .9rem;
+        line-height: 15px;
+    }
+    .medal-2{
+        padding: 0 5px;
+        flex-direction: column;
+    }
+    .medal-2 img{
+        width: 35%;         
+    }
+    .medal-2-txt{
+        padding: 5px 10px;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+    }
+    .medal-2-txt h3{
+        font-size: .8rem;
+        line-height: 18px;
+        padding-bottom: 5px;
+    }
+    .medal-2-txt p{
+        font-size: .9rem;
+        line-height: 15px;
+    }
+    .medal-3{
+        flex-direction: column;
+    }
+    .medal-3 img{
+        width: 35%;         
+    }
+    .medal-3-txt{
+        padding: 5px 10px;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+    }
+    .medal-3-txt h3{
+        font-size: .8rem;
+        line-height: 18px;
+        padding-bottom: 5px;
+    }
+    .medal-3-txt p{
+        font-size: .9rem;
+        line-height: 15px;
+    }
+    /* FIN INDEX */
+
+
+
+    /* PAGE ZAPATILLAS */
+    .zc-title{
+        width: 100%;        
+    }
+    .zc-title h2{
+        font-size: 2.5rem;
+        padding: 0 50px;
+        text-align: center;
+        line-height: 35px;
+    }
+    .zc-title p{
+        font-size: 1.2rem;
+        width: 80%;
+    }
+    .zc-grid{
+        padding: 0 10px 50px 10px;
+        gap: 10px;
+    }
+
+
+
+    /* ROPA */
+    .rc-title{
+        width: 100%;        
+    }
+    .rc-title h2{
+        font-size: 2.5rem;
+        padding: 0 50px;
+        text-align: center;
+        line-height: 35px;
+    }
+    .rc-title p{
+        font-size: 1.2rem;
+        width: 85%;
+        line-height: 15px;
+    }
+    .rc-grid{
+        padding: 0 10px 50px 10px;
+        gap: 10px;
+    }
+
+
+
+    /* ACCESORIOS */
+    .ac-title{
+        width: 100%;        
+    }
+    .ac-title h2{
+        font-size: 2.5rem;
+        padding: 0 50px;
+        text-align: center;
+        line-height: 35px;
+    }
+    .ac-title p{
+        font-size: 1.2rem;
+        width: 85%;
+        line-height: 15px;
+    }
+    .ac-grid{
+        padding: 0 10px 50px 10px;
+        gap: 10px;
+    }
+
+
+ 
+    /* FOOTER */
+    .fg-container{
+        display: grid;
+        grid-template-columns: 1.25fr 1fr 1.25fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        padding: 30px 0;
+        max-width: 100%;
+    }
+    .fgc-1{        
+        grid-area: 1 / 1 / 2 / 2;
+        padding-left: 10px;
+        min-width: 0;
+    }
+    .fgc-1 h6{
+        font-size: .7rem;
+        padding-bottom: 10px;
+    }
+    .fgc-1 p{
+        font-size: 1rem;
+        line-height: 15px;       
+    }
+    .fgc-2{
+        grid-area: 1 / 2 / 2 / 3;
+        /* padding-right: 10px; */
+    }
+    .fgc-2 h6{
+        font-size: .7rem;
+        padding-bottom: 10px;
+    }
+    .fgc-2 p{
+        font-size: 1rem;
+        line-height: 15px;
+    }
+    .fgc-3{
+        grid-area: 1 / 3 / 2 / 4;
+    }
+    .fgc-3 h6{
+        font-size: .7rem;
+        padding-bottom: 10px
+    }
+    .fgc-3 p{
+        font-size: 1rem;
+        line-height: 20px;
+    }
+    .fgc-4{
+        grid-area: 2 / 1 / 3 / 3; 
+        min-width: 0;    
+        padding-left: 10px;
+    }
+    .fgc-4 h6{
+        font-size: .7rem;
+        padding-bottom: 10px
+    }
+    .fgc-4 p{
+        font-size: 1rem;
+        line-height: 15px;
+    }
+    .fgc4-scon{
+        padding: 0;
+        max-width: 77%;
+        
+    }
+    .fgc4-scon input{
+        font-size: .9rem;   
+        min-width: 100%;     
+    }
+    .fgc4sc-btn{
+        font-size: .9rem;
+        padding: 10px;
+        
+    }
+    .fgc-5{
+        grid-area: 3 / 1 / 4 / 3;
+        padding-left: 10px;  
+    }
+    .fgc-5 p{
+        font-size: .9rem;
+        width: 90%;
+    }
+    .fgc-6{        
+        grid-area: 2 / 3 / 3 / 4;
+        flex-wrap: wrap;
+    }
+    .fgc-6 img{
+        margin: 10px 20px;
+        width: 20%;
+    }
+    .fgc-7{
+        grid-area: 3 / 3 / 4 / 4;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 800px){
+    /* HEADER */
+    .navbar-brand{
+        margin: 0;
+        padding: 0 20px;
+        width: 100%;
+    }
+
+
+    /* CARRUSEL */
+    .carousel-content{
+        width: 50%;
+    }
+    .carousel-content h3{
+        font-size: 2.7rem;
+        line-height: 45px;
+        padding: 5px 0;        
+    }
+    .carousel-content p:nth-child(1){
+        font-size: 1.1rem;
+    }
+    .carousel-content p:nth-child(3){
+        font-size: 1.7rem;
+        padding-bottom: 10px;
+    }
+    .carousel-content button{
+        width: 50%; 
+    }
+    .carousel-content button a{
+        font-size: .7rem;
+    }
+
+
+
+    /* TWO OFFER */
+    .first-offer{
+        padding-left: 30px;
+        background-position: right;
+        background-repeat: no-repeat;  
+        width: 60%;
+    }
+    .first-offer p{
+        font-size: .9rem;        
+    }
+    .first-offer h2{
+        width: 80%;
+        font-size: 3rem;
+        line-height: 35px;          
+    }
+    .first-offer span{
+        font-size: .7rem;
+        text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    }
+    .first-offer .fo-btn{        
+        padding: 10px 20px;
+    }
+    .first-offer .fo-btn a{        
+        font-size: .9rem;
+    }
+    .second-offer{
+        padding-left: 30px;
+        background-position: right;
+        background-repeat: no-repeat;  
+        width: 40%;
+    }
+    .second-offer p{
+        font-size: .9rem;        
+    }
+    .second-offer h2{
+        width: 80%;
+        line-height: 35px; 
+        font-size: 3rem;         
+    }
+    .second-offer .fo-btn{        
+        padding: 4px 20px;
+    }
+    .second-offer .fo-btn a{        
+        font-size: .75rem;
+    }
+
+
+
+    /* PRODUCTS */
+    .products{
+        margin-bottom: -60px;
+    }
+    .products-grid-1 h2{
+        font-size: 2.5rem;
+        padding: 0;
+    }
+    .products-grid-1 p{
+        font-size: 1.2rem;
+        padding: 0;
+    }
+
+
+
+    /* GRID OFFER */
+    .grid-offer{
+        margin-bottom: -60px;
+    }    
+    .go-1 p{
+        font-size: 1.1rem;        
+    }
+    .go-1 h2{
+        font-size: 2.8rem;
+        line-height: 45px;
+        text-align: center;
+        padding: 20px 0;
+    }
+    .go-1 h3{
+        font-size: 1.1rem;
+    }
+    .go2-cont{
+        width: 60%;
+    }
+    .go2-cont p{
+        font-size: 1.1rem;
+    }
+    .go2-cont h3{
+        font-size: 2rem;
+        line-height: 30px;
+        padding: 20px 0 10px 0;
+    }
+    .go2-prices{
+        font-size: 1.6rem;
+    }
+    .go2-btn{
+        font-size: 1.2rem;
+    }
+    .go3-cont{
+        width: 80%;
+    }
+    .go3-cont p{
+        font-size: 1.1rem;
+    }
+    .go3-cont h3{
+        font-size: 2rem;
+        line-height: 30px;
+        padding: 20px 0 10px 0;
+        width: 80%;
+    }
+    .go3-prices{
+        font-size: 1.6rem;
+    }
+    .go3-btn{
+        font-size: 1.2rem;
+    }
+
+
+
+    /* GALLERY */
+    .last-img img{
+        width: 30%;
+        top: 10px;
+        left: 10px;
+    }
+    .last-img p{
+        bottom: 10px;
+        left: 10px;
+        font-size: .9rem;
+        line-height: 15px;
+    }
+
+
+
+    /* MEDALS */
+    .medals{
+        padding: 0 10px;
+    }
+    .medal-1-txt{
+        padding: 5px 10px;
+    }
+    .medal-1-txt h3{
+        font-size: 1rem;
+        line-height: 18px;
+        padding-bottom: 5px;
+        width: 80%;
+    }
+    .medal-1-txt p{
+        font-size: .9rem;
+        line-height: 15px;
+        padding: 5px 0;
+    }
+    .medal-2-txt{
+        padding: 5px 10px;
+    }
+    .medal-2-txt h3{
+        font-size: 1rem;
+        line-height: 18px;
+        padding-bottom: 5px;
+        width: 100%;
+    }
+    .medal-2-txt p{
+        font-size: .9rem;
+        line-height: 15px;
+        padding: 5px 0;
+    }
+    .medal-3-txt{
+        padding: 5px 10px;
+    }
+    .medal-3-txt h3{
+        font-size: 1rem;
+        line-height: 18px;
+        padding-bottom: 5px;
+        
+    }
+    .medal-3-txt p{
+        font-size: .9rem;
+        line-height: 15px;
+        padding: 5px 0;
+    }
+
+
+
+    /* FOOTER */
+    .fg-container{
+        display: grid;
+        grid-template-columns: 1.25fr 1fr 1.25fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;       
+        max-width: 100%;
+    }
+    .fgc-1{        
+        grid-area: 1 / 1 / 2 / 2;
+        padding-left: 30px;
+        min-width: 0;
+    }
+    .fgc-1 h6{
+        font-size: 1rem;
+        padding-bottom: 10px;
+    }
+    .fgc-1 p{
+        font-size: 1.2rem;
+        line-height: 20px;       
+    }
+    .fgc-2{
+        grid-area: 1 / 2 / 2 / 3;       
+    }
+    .fgc-2 h6{
+        font-size: 1rem;
+        padding-bottom: 10px;
+    }
+    .fgc-2 p{
+        font-size: 1.2rem;
+        line-height: 20px;
+    }
+    .fgc-3{
+        grid-area: 1 / 3 / 2 / 4;
+        padding-right: 30px;
+    }
+    .fgc-3 h6{
+        font-size: 1rem;
+        padding-bottom: 10px;
+    }
+    .fgc-3 p{
+        font-size: 1.2rem;
+        line-height: 30px;
+
+    }
+    .fgc-4{
+        grid-area: 2 / 1 / 3 / 3; 
+        min-width: 0;    
+        padding-left: 10px;
+    }
+    .fgc-4 h6{
+        font-size: 1rem;
+        padding-bottom: 10px;
+    }
+    .fgc-4 p{
+        font-size: 1.2rem;
+        line-height: 20px;
+    }
+    .fgc4-scon{
+        padding: 0;
+    }
+    .fgc4-scon input{
+        font-size: .9rem;        
+    }
+    .fgc4sc-btn{
+        font-size: .9rem;
+        padding: 10px;
+        
+    }
+    .fgc-5{
+        grid-area: 3 / 1 / 4 / 3;
+        padding-left: 10px;  
+    }
+    .fgc-5 p{
+        font-size: .9rem;
+        width: 90%;
+    }
+    .fgc-6{        
+        grid-area: 2 / 3 / 3 / 4;
+        flex-wrap: wrap;
+    }
+    .fgc-6 img{
+        margin: 0 20px;
+        width: 20%;
+    }
+    .fgc-7{
+        grid-area: 3 / 3 / 4 / 4;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 1050px){
+    /* HEADER */
+    .navbar-brand{
+        margin: 0;
+        padding: 0 20px;
+        width: 100%;
+    }
+
+    
+
+    /* CARRUSEL */
+    .carousel-content{
+        width: 70%;
+    }
+    .carousel-content h3{
+        font-size: 3.5rem;
+        line-height: 45px;
+        padding: 5px 0;        
+    }
+    .carousel-content p:nth-child(1){
+        font-size: 1.2rem;
+    }
+    .carousel-content p:nth-child(3){
+        font-size: 2rem;
+        padding-bottom: 10px;
+    }
+    .carousel-content button{
+        width: 50%; 
+    }
+    .carousel-content button a{
+        font-size: .8rem;
+    }
+
+
+
+    /* TWO OFFER */
+    .first-offer{
+        padding-left: 50px;
+        background-position: right;
+        background-repeat: no-repeat;  
+        width: 60%;
+    }
+    .first-offer p{
+        font-size: .9rem;        
+    }
+    .first-offer h2{
+        width: 80%;
+        font-size: 3rem;
+        line-height: 35px;          
+    }
+    .first-offer span{
+        font-size: .7rem;
+        text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    }
+    .first-offer .fo-btn{        
+        padding: 10px 20px;
+    }
+    .first-offer .fo-btn a{        
+        font-size: .9rem;
+    }
+    .second-offer{
+        padding-left: 50px;
+        background-position: right;
+        background-repeat: no-repeat;  
+        width: 45%;
+    }
+    .second-offer p{
+        font-size: .9rem;        
+    }
+    .second-offer h2{
+        width: 80%;
+        line-height: 35px; 
+        font-size: 3rem;         
+    }
+    .second-offer .fo-btn{        
+        padding: 4px 20px;
+    }
+    .second-offer .fo-btn a{        
+        font-size: .75rem;
+    }
 }
